@@ -25,7 +25,7 @@
 	document.querySelect(".inputBox").addEventListener("click", setColor);
 	
 	function setColor() {
-	    inputField.style.background-color = "blue";
+	    inputField.style.backgroundColor = "blue";
 	};
 
 // ------------commit 3------------
@@ -44,8 +44,11 @@
 		});
 
 // ------------commit 5------------			
-
-
+	var allSquare = document.getElementsByClassName(".square");
+		allSquare.forEach(function(square) {
+			event.target.style.backgroundColor = 'blue';
+		});
+// ------------commit 6------------	
 
 </script>
 </body>
