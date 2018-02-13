@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div class="inputBox">
+<input type="text"  name="">
+</div>
+<button id="btn">Set Color</button>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	
+	var inputField = $('input:text')	
+
+	document.getElementById("#btn").addEventListener("click", setColor);
+	
+	function setColor() {
+	    inputField.background-color = "blue";
+	};
+</script>
+</body>
+</html>
