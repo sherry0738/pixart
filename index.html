@@ -40,15 +40,21 @@
 // ------------commit 4------------	
 	var allSquare = document.getElementsByClassName(".square");
 		allSquare.forEach(function(square) {
-			event.target.style.backgroundColor = 'green';
-		});
+			square.addEventListener("click", colorGreen);
+			function colorGreen() {
+				event.target.style.backgroundColor = 'green';
+		};
 
 // ------------commit 5------------			
 	var allSquare = document.getElementsByClassName(".square");
 		allSquare.forEach(function(square) {
-			event.target.style.backgroundColor = 'blue';
-		});
+			square.addEventListener("click", colorBlue);
+			function colorBlue() {
+				event.target.style.backgroundColor = 'blue';
+		};
 // ------------commit 6------------	
+
+
 
 </script>
 </body>
