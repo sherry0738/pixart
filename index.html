@@ -10,21 +10,34 @@
 </div>
 <button id="btn">Set Color</button>
 
-
+<div class="square">
+	
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-	
+// ------------commit 1 & 2------------	
 	var inputField = $('input:text')	
 	var inputBox = $( ".inputBox" )
-	
+
 	document.getElementById("#btn").addEventListener("click", setColor);
 	document.querySelect(".inputBox").addEventListener("click", setColor);
 	
 	function setColor() {
 	    inputField.background-color = "blue";
 	};
+
+// ------------commit 3------------
+	var squareBox = $(".square");
+	var divs = $("<div>");
+
+	squareBox.width() = "20px"
+	squareBox.height() = "20px"
+	squareBox.append(divs);
+
+// ------------commit 4------------	
+
 </script>
 </body>
 </html>
