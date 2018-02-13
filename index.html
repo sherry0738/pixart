@@ -17,8 +17,10 @@
 <script>
 	
 	var inputField = $('input:text')	
-
+	var inputBox = $( ".inputBox" )
+	
 	document.getElementById("#btn").addEventListener("click", setColor);
+	document.querySelect(".inputBox").addEventListener("click", setColor);
 	
 	function setColor() {
 	    inputField.background-color = "blue";
