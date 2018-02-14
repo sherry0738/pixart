@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -17,44 +18,51 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-// ------------commit 1 & 2------------	
-	var inputField = $('input:text')	
-	var inputBox = $( ".inputBox" )
+	var brushBox = document.querySelector(".brushBox");	
+	var inputBox = document.querySelector(".inputBox");
+	var colorBtn = document.querySelector(".colorBtn");
 
-	document.getElementById("#btn").addEventListener("click", setColor);
-	document.querySelect(".inputBox").addEventListener("click", setColor);
-	
-	function setColor() {
-	    inputField.style.backgroundColor = "blue";
-	};
-
-// ------------commit 3------------
-
-	var divs = $("<div>");
-		divs.addClass("square");
+		colorBtn.addEventListener("click", function(event) {
+			event.preventDefault();
+		    brushBox.style.backgroundColor = inputBox.value;    
+		});
+// ----------------------start 3-------------------
 	var body = $("body");
-	divs.width() = "20px"
-	divs.height() = "20px"
-	body.append(divs);
-
-// ------------commit 4------------	
-	var allSquare = document.getElementsByClassName(".square");
-		allSquare.forEach(function(square) {
-			square.addEventListener("click", colorGreen);
-			function colorGreen() {
-				event.target.style.backgroundColor = 'green';
-		};
-
-// ------------commit 5------------			
-	var allSquare = document.getElementsByClassName(".square");
-		allSquare.forEach(function(square) {
-			square.addEventListener("click", colorBlue);
-			function colorBlue() {
-				event.target.style.backgroundColor = 'blue';
-		};
-// ------------commit 6------------	
-
-
+	var divWidth = 20;
+	var divHeight = 20;
+	
+	for (var i = 0; i < 100; i++) {
+		var divs = $("<div>");
+		divs.addClass("square").width( divWidth ).height(divHeight);
+		body.append(divs);		
+	}
+// ---------------------- start 4 & 5-------------------
+	//  $(".square").one("click", function(){
+    // 		var eachSq = $(this).css("background-color",inputBox.value)
+    //  });
+// ---------------------- start 6 -------------------
+	$(".square").one("mouseover", function(){
+   		$(this).css("background-color",inputBox.value)
+    });
+// ---------------------- start 7 --------------------	
+    var stampInput = document.querySelector(".stampInput");
+	
+	var stampBtn = document.querySelector(".stampBtn"); 	
+		stampBtn.addEventListener("click", function(event) {
+			event.preventDefault();
+			var options = {url: `http://www.omdbapi.com/?apikey=2f6435d9&t=${stampInput.value}`};
+		    	$.ajax(options).done(function(res) {
+					var backgroundPic = res.Poster;
+					// console.log(res);
+					// console.log(backgroundPic);	
+					brushBox.addEventListener("mouseover", function() {
+						$(this).css('background-image', 'url(' + backgroundPic + ')');
+					});
+					$(".square").one("mouseover", function(){
+    		 			$(this).css('background-image', 'url(' + backgroundPic + ')');
+    				});
+				});	    
+		});
 
 </script>
 </body>

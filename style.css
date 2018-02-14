@@ -1,0 +1,13 @@
+.brushBox {
+	border: 2px solid black;
+	height: 300px;
+	width: 300px;
+}
+body {
+	margin: 2px;
+	height: 600px;
+	width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	border-style: none;
+}
